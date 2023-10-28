@@ -27,4 +27,9 @@ fun main(args: Array<String>) {
     
     // 循环
     loop()
+
+    // 函数调用
+    function()
+
+    
 }
