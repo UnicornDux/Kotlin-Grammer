@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="4fa19825-b0e5-4677-bb1f-af61098d3091" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/base/innerfunc/funcAlso.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/base/innerfunc/funcLet.kt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Script" />
+        <option value="Kotlin Class" />
+        <option value="Kotlin File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\maven_repository\repo_current" />
+        <option name="mavenHome" value="$PROJECT_DIR$/../../Scoop/apps/maven/current" />
+        <option name="userSettingsFile" value="F:\Scoop\apps\maven\current\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2OQDHLbfm3LbI79MEdZEkPujXE0" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "ktor.last.update.timestamp": "1683957220454",
+    "last_opened_file_path": "D:/JavaCode/kotlin-grammer",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.37079573",
+    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\WorkSpace\kotlin-grammer\src\main\kotlin\base" />
+      <recent name="F:\WorkSpace\kotlin-grammer\src\main\kotlin\branch" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MainKt" />
+      <module name="kotlin-grammer.main" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Kotlin.MainKt" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="4fa19825-b0e5-4677-bb1f-af61098d3091" name="Changes" comment="" />
+      <created>1681483828925</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681483828925</updated>
+      <workItem from="1681483832132" duration="1569000" />
+      <workItem from="1681486616935" duration="237000" />
+      <workItem from="1681486880789" duration="104000" />
+      <workItem from="1681518146830" duration="3388000" />
+      <workItem from="1681540406572" duration="11097000" />
+      <workItem from="1681692984257" duration="2587000" />
+      <workItem from="1681822533487" duration="3303000" />
+      <workItem from="1682255233749" duration="3566000" />
+      <workItem from="1682334682581" duration="3809000" />
+      <workItem from="1682558134614" duration="1980000" />
+      <workItem from="1682602086378" duration="808000" />
+      <workItem from="1682761152766" duration="457000" />
+      <workItem from="1683162234544" duration="2560000" />
+      <workItem from="1683204782539" duration="5337000" />
+      <workItem from="1683248476095" duration="1930000" />
+      <workItem from="1683957212909" duration="2775000" />
+    </task>
+    <task id="LOCAL-00001" summary="git init">
+      <created>1683249331992</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249331992</updated>
+    </task>
+    <task id="LOCAL-00002" summary="kotlin 基础之数据结构">
+      <created>1683249406336</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249406336</updated>
+    </task>
+    <task id="LOCAL-00003" summary="kotlin 基础之分支结构">
+      <created>1683249441727</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249441727</updated>
+    </task>
+    <task id="LOCAL-00004" summary="kotlin 基础之循环结构">
+      <created>1683249468713</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249468713</updated>
+    </task>
+    <task id="LOCAL-00005" summary="kotlin 基础之函数">
+      <created>1683249517383</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249517383</updated>
+    </task>
+    <task id="LOCAL-00006" summary="kotlin 基础之面向对象的基本特性">
+      <created>1683249575630</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249575630</updated>
+    </task>
+    <task id="LOCAL-00007" summary="kotlin 基础之面向对象之类的扩展">
+      <created>1683249619343</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249619343</updated>
+    </task>
+    <task id="LOCAL-00008" summary="kotlin 基础之面向对象之接口">
+      <created>1683249644388</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249644388</updated>
+    </task>
+    <task id="LOCAL-00009" summary="kotlin 基础之面向对象之方法">
+      <created>1683249663070</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249663070</updated>
+    </task>
+    <task id="LOCAL-00010" summary="kotlin 基础之对对象表达式">
+      <created>1683249687660</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249687660</updated>
+    </task>
+    <task id="LOCAL-00011" summary="kotlin 基础之单例模式">
+      <created>1683249712716</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249712716</updated>
+    </task>
+    <task id="LOCAL-00012" summary="kotlin 基础之程序入口类">
+      <created>1683249731317</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1683249731317</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="git init" />
+    <MESSAGE value="kotlin 基础之数据结构" />
+    <MESSAGE value="kotlin 基础之分支结构" />
+    <MESSAGE value="kotlin 基础之循环结构" />
+    <MESSAGE value="kotlin 基础之函数" />
+    <MESSAGE value="kotlin 基础之面向对象的基本特性" />
+    <MESSAGE value="kotlin 基础之面向对象之类的扩展" />
+    <MESSAGE value="kotlin 基础之面向对象之接口" />
+    <MESSAGE value="kotlin 基础之面向对象之方法" />
+    <MESSAGE value="kotlin 基础之对对象表达式" />
+    <MESSAGE value="kotlin 基础之单例模式" />
+    <MESSAGE value="kotlin 基础之程序入口类" />
+    <option name="LAST_COMMIT_MESSAGE" value="kotlin 基础之程序入口类" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
