@@ -31,5 +31,16 @@ fun main(args: Array<String>) {
     // 函数调用
     function()
 
-    
+    // 类与面向对象
+    oop()
+
+    // 枚举类
+    testEnum()
+
+    // 密封类
+    seal()
+
+    // 数据类
+    data()
+
 }
