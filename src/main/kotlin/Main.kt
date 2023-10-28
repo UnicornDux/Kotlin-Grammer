@@ -22,4 +22,9 @@ fun main(args: Array<String>) {
     // 区间
     range()
 
+    // 测试分支结构
+    branch()
+    
+    // 循环
+    loop()
 }
