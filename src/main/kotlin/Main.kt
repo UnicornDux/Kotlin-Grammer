@@ -43,4 +43,7 @@ fun main(args: Array<String>) {
     // 数据类
     data()
 
+    // 方法
+    method()
+
 }
