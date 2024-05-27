@@ -9,41 +9,40 @@ import base.oop.testEnum
 import base.variable.range
 import base.variable.variable
 
-
 fun main(args: Array<String>) {
 
-    // Try adding program arguments via Run/Debug configuration.
-    // Learn more about running applications: https://www.jetbrains.com/help/idea/running-applications.html.
-    println("Program arguments: ${args.joinToString()}")
+  // Try adding program arguments via Run/Debug configuration.
+  // Learn more about running applications:
+  // https://www.jetbrains.com/help/idea/running-applications.html.
+  println("Program arguments: ${args.joinToString()}")
 
-    // 测试变量的声明
-    variable()
+  // 测试变量的声明
+  variable()
 
-    // 区间
-    range()
+  // 区间
+  range()
 
-    // 测试分支结构
-    branch()
-    
-    // 循环
-    loop()
+  // 测试分支结构
+  branch()
 
-    // 函数调用
-    function()
+  // 循环
+  loop()
 
-    // 类与面向对象
-    oop()
+  // 函数调用
+  function()
 
-    // 枚举类
-    testEnum()
+  // 类与面向对象
+  oop()
 
-    // 密封类
-    seal()
+  // 枚举类
+  testEnum()
 
-    // 数据类
-    data()
+  // 密封类
+  seal()
 
-    // 方法
-    method()
+  // 数据类
+  data()
 
+  // 方法
+  method()
 }
