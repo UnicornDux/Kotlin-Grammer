@@ -2,7 +2,7 @@
 //
 //
 // Any 类型是一切类的父类，相当于 java 中的 Object
-//
+//   > 内部为所有的类提供 hash, equals, toString 方法
 //
 // Nothing
 //
@@ -29,10 +29,8 @@ class A {
   fun plus() {
     // c.plus("s")
     //
-    b.plus(10) // 警告 b 可能为空
+    // b.plus(10) // 警告 b 可能为空
     // 对 b 强制关闭空检查,
     b!!.plus(10)
   }
 }
-}
-

@@ -92,7 +92,8 @@ fun label() {
         // lambda 表达式中的 break 是不起作用
         // break
 
-        // 因为  lambda 实际上是一个函数，因此我们只能使用return 来结束它
+        // 因为  lambda 实际上是一个函数，如果想要结束整个foreach
+        // 因此我们只能使用return + 外层标签 来结束它
         return@b
 
         // 但是我们仅仅想要当前正在执行的本次操作，需要借助标签来操作
