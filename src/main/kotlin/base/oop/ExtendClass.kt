@@ -20,11 +20,3 @@ class F : E {
 
 // 直接在子类的主构造调用父类的构造
 class G(name: String) : E(name, age = 10) {}
-
-// 抽象类
-abstract class H() {
-  // 抽象类中可以有普通的方法
-  // 抽象类中的抽象方法没有方法体，当一个类继承了一个抽象类，
-  // 需要实现这个抽象方法
-  abstract fun click()
-}
