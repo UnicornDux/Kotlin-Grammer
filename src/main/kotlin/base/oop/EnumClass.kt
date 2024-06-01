@@ -1,6 +1,6 @@
 package base.oop
 
-fun testEnum() {
+fun enums() {
   println(Menu.HOME)
   println(Menu.BUFFER.alias)
 }

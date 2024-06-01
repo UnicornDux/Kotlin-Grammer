@@ -3,9 +3,9 @@ import base.function.function
 import base.loop.loop
 import base.method.method
 import base.oop.data
+import base.oop.enums
 import base.oop.oop
 import base.oop.seal
-import base.oop.testEnum
 import base.variable.range
 import base.variable.variable
 
@@ -35,7 +35,7 @@ fun main(args: Array<String>) {
   oop()
 
   // 枚举类
-  testEnum()
+  enums()
 
   // 密封类
   seal()

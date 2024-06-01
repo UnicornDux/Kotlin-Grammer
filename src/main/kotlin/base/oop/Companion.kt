@@ -119,7 +119,7 @@ class AH {
   companion object Child : Cache {
 
     // 实现抽象方法
-    fun get(key: String): String {
+    override fun get(key: String): String {
       return key
     }
   }
