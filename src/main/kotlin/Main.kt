@@ -8,6 +8,7 @@ import base.oop.oop
 import base.oop.seal
 import base.variable.range
 import base.variable.variable
+import coroutines.coroutines
 
 fun main(args: Array<String>) {
 
@@ -16,6 +17,10 @@ fun main(args: Array<String>) {
   // https://www.jetbrains.com/help/idea/running-applications.html.
   println("Program arguments: ${args.joinToString()}")
 
+  coroutines()
+}
+
+fun premain() {
   // 测试变量的声明
   variable()
 
