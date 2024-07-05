@@ -1,3 +1,5 @@
+import advance.coroutinue
+import advance.lambda
 import base.branch.branch
 import base.function.function
 import base.loop.loop
@@ -9,6 +11,7 @@ import base.oop.seal
 import base.variable.range
 import base.variable.variable
 import coroutines.coroutines
+import http.startServer
 
 fun main(args: Array<String>) {
 
@@ -17,10 +20,22 @@ fun main(args: Array<String>) {
   // https://www.jetbrains.com/help/idea/running-applications.html.
   println("Program arguments: ${args.joinToString()}")
 
-  coroutines()
+  // base()
+  // advance()
+  //
+  startServer()
 }
 
-fun premain() {
+// 高级特性
+fun advance() {
+  //
+  coroutinue()
+
+  lambda()
+}
+
+// 基础编码能力
+fun base() {
   // 测试变量的声明
   variable()
 
