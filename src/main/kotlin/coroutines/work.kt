@@ -21,7 +21,6 @@ fun coroutines() {
 // 这种方式是一种阻塞的方式，一般不会直接使用，较多使用在单元测试里面
 //
 fun lauchFunc() = runBlocking {
-
   // 启动一个协程
   val job = launch { println("runBlocking, work..") }
   job.join()
@@ -58,7 +57,6 @@ fun workLong() {
 //
 
 fun contextFunc() {
-
   val coroutineScope = CoroutineScope(Dispatchers.Default)
   // 开启协程
   coroutineScope.launch {
