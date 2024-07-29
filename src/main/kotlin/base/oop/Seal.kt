@@ -24,20 +24,25 @@ class Kimi : Tom() {
   override fun a() {
     println("a")
   }
+
   override fun pop() {}
 }
 
 // 单例继承密封
 object Ollam : Tom() {
-
   override fun a() {
     println("ollam")
   }
+
   override fun pop() {}
 }
 
+/**
+ * seaded class 是一个有限子类的类，它的子类只能定义在同一个文件中
+ *        (1.1 之前必须为内部类) 因此在 when case 的时候是可以穷尽的，
+ *  > 主要的应用场景是封装一些硬件的操作指令，不能让外部随便的扩展
+ */
 fun handler(t: Tom) {
-
   when (t) {
     is Kimi -> println("handler by kimi")
     is Ollam -> println("handle by ollam")
@@ -52,7 +57,11 @@ interface Pop {
 // seal class 的使用场景
 
 sealed class MainIntent {
-  data class Login(val act: String, val pwd: String) : MainIntent()
+  data class Login(
+      val act: String,
+      val pwd: String,
+  ) : MainIntent()
+
   object Logout : MainIntent()
 }
 
@@ -63,17 +72,20 @@ fun operation(mainIntent: MainIntent) {
   }
 }
 
-fun userLoginRequest(act: String, pwd: String) {
-  println("${act} is load in system with ${pwd}")
+fun userLoginRequest(
+    act: String,
+    pwd: String,
+) {
+  println("$act is load in system with $pwd")
 }
 
 // 密封接口
 //
 // 主要的方式就是使用到多个密封接口
 // 可以进行密封类多实现，
-sealed interface Weapon {}
+sealed interface Weapon
 
-sealed interface Health {}
+sealed interface Health
 
 // 多接口实现
 class Player : Health, Weapon
@@ -93,6 +105,7 @@ fun handleHealth(role: Health) {
     else -> TODO()
   }
 }
+
 // 在函数内部进行处理的时候可以使用模式匹配进行处理
 fun handleWeapon(role: Weapon) {
   when (role) {

@@ -10,7 +10,6 @@ fun method() {
 }
 
 open class K {
-
   // 1. 属性的重写
   // 属性要被重写，则需要使用 open 修饰
   open val count1 = 1
@@ -33,7 +32,6 @@ open class K {
 }
 
 class J : K() {
-
   // 重写类的方法
   override fun go() {
     println("go")

@@ -1,6 +1,5 @@
 /** object 关键字的使用场景 */
 fun objects() {
-
   // kotlin 中的单例中方法的调用可以省略实例，直接使用类进行调用即可
   O.find()
   println(O.a)
@@ -11,7 +10,7 @@ fun objects() {
   request(
       object : CallBack {
         override fun loading() {}
-      }
+      },
   )
 
   // 如果我们在 java 中的 lambda 接口在 kotlin 中被使用，
@@ -41,11 +40,9 @@ object O : Query {
       INSTANCE = new O();
     }
   }
-  */
+   */
 
-  override fun find(): String {
-    return "query"
-  }
+  override fun find(): String = "query"
 
   // 单例中也可以使用 const 关键字
   const val a = 10

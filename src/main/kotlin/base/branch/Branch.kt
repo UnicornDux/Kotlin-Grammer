@@ -26,13 +26,13 @@ fun ifStatement() {
   // 这时候，必须存在 else 语句，否则不知道返回的具体值是什么
   // 当 表达式中没有返回值的时候，x 为 Unit 类型，与 Java 中 void 类型对应
   val x =
-      if (a < 5) {
-        // 最后一行为返回值
-        1
-      } else {
-        //
-        "hello"
-      }
+    if (a < 5) {
+      // 最后一行为返回值
+      1
+    } else {
+      //
+      "hello"
+    }
   println(x)
 
   // kotlin 没有三元表达式，可以使用 if 构建出来一个 三元表达式
@@ -45,7 +45,6 @@ fun ifStatement() {
 // kotlin 没有 switch 关键字表示的分支语句
 // when_case 分支语句, 没有 break, 默认是一种条件匹配就终止
 fun whenCase() {
-
   // 用于数值判断
   val a = Date().time % 10
   when (a.toInt()) {
@@ -80,19 +79,18 @@ fun whenCase() {
   // 这时候 else 分支必须存在，
   // 表示式的最后一行为返回值，不需要 return, 最后一行不返回则是 Unit
   val x =
-      when (a.toInt()) {
-        1, 3 -> {
-          println("plus")
-          a + 10
-        }
-        5, 6 -> {
-          println("minus")
-          a - 3
-        }
-        else -> {
-          "not handle"
-        }
+    when (a.toInt()) {
+      1, 3 -> {
+        println("plus")
+        a + 10
       }
+      5, 6 -> {
+        println("minus")
+        a - 3
+      }
+      else -> {
+        "not handle"
+      }
+    }
   println("x is $x")
 }
-

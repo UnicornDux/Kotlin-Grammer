@@ -14,7 +14,10 @@ interface Operation {
 // 枚举值就是当前枚举类的静态实例对象
 //  1.枚举可以定义抽象方法, 则它的所有实例对象必须要实现这样的方法
 //  2.枚举可以事先接口，则它的所有实例对象必须要实现接口中的方法
-enum class Menu(val alias: String, address: String) : Operation {
+enum class Menu(
+    val alias: String,
+    address: String,
+) : Operation {
   HOME("home", "alibaba") {
     override fun allocate() {
       println(this.alias)
@@ -24,5 +27,5 @@ enum class Menu(val alias: String, address: String) : Operation {
     override fun allocate() {
       println(this.alias)
     }
-  }
+  },
 }

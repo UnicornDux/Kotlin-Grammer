@@ -24,10 +24,10 @@ fun range() {
   // 判断某个数是否在区间中
   val a = 13
   println(a in range2)
+  println("range1 contains 20: ${range1.contains('o')}")
 
   for (value in range3) {
     print(" " + value)
   }
   println()
 }
-

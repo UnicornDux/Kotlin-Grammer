@@ -67,7 +67,6 @@ fun whileLoop() {
 }
 
 fun loopControl() {
-
   // break : 中断循环, 多层循环可以使用标签来中断
   // continue : 终止当前循环中的本次执行
   // return : 结束当前函数体
@@ -85,7 +84,6 @@ fun loopControl() {
 // 标签与 函数体的结合使用
 
 fun label() {
-
   run b@{
     (0..10).forEach a@{ item ->
       if (item == 5) {

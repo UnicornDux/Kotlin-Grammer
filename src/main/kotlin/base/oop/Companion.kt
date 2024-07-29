@@ -23,7 +23,6 @@ fun companions() {
 }
 
 class AC {
-
   // 定义伴生类
   companion object {
     fun test() {
@@ -33,16 +32,14 @@ class AC {
 
   // 编译出来的 java 代码类似于
   /*
-   public static final Companion Companion = new Companion((DefaultCons....))
-   public static final class Companion {
-      fun final void test() { .... }
-   }
+  public static final Companion Companion = new Companion((DefaultCons....))
+  public static final class Companion {
+     fun final void test() { .... }
+  }
   */
-
 }
 
 class AD {
-
   // 定义伴生类
   companion object {
     //
@@ -56,21 +53,20 @@ class AD {
 
     // 反编译出来的 java 代码多出来一个静态的 test 方法
     /*
-      @JvmStatic
-      public static void test() { ... }
+     @JvmStatic
+     public static void test() { ... }
 
-      public static final Companion Companion = new Companion((DefaultCons....))
-      public static final class Companion {
+     public static final Companion Companion = new Companion((DefaultCons....))
+     public static final class Companion {
 
-         @JvmStatic
-         fun final void test() { .... }
-      }
+        @JvmStatic
+        fun final void test() { .... }
+     }
     */
   }
 }
 
 class AF {
-
   // 定义成员
   companion object {
     // 当我们需要使用这个变量的时候 还是需要借助
@@ -89,11 +85,10 @@ class AF {
      // Companion 内使用 public  getA 提供数据访问,
      fun final void getA() { return AF.a }
   }
-  */
+   */
 }
 
 class AG {
-
   companion object {
     // const 关键字的用法,
     // 1. const 声明的变量在原生的 java 中是反编译为
@@ -117,11 +112,8 @@ class AH {
   // 伴生类可以有类名, 如果不像使用默认生成的 Companion 类名, 可以指定类名
   // 伴生类同样可以实现接口, 继承抽象类
   companion object Child : Cache {
-
     // 实现抽象方法
-    override fun get(key: String): String {
-      return key
-    }
+    override fun get(key: String): String = key
   }
 }
 
