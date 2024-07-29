@@ -1,3 +1,5 @@
+import advance.coroutinue
+import advance.lambda
 import base.branch.branch
 import base.function.function
 import base.loop.loop
@@ -24,9 +26,22 @@ fun main(args: Array<String>) {
 fun app() {
   // calculate()
   //
+  // base()
+  // advance()
+  //
+  startServer()
 }
 
-fun premain() {
+// 高级特性
+fun advance() {
+  //
+  coroutinue()
+
+  lambda()
+}
+
+// 基础编码能力
+fun base() {
   // 测试变量的声明
   variable()
 
