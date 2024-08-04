@@ -4,7 +4,7 @@ import java.io.BufferedReader
 import java.net.ServerSocket
 import kotlin.collections.mutableListOf
 
-fun startServer() {
+fun httpServer() {
   val server = Server(8080)
   server.start()
 }

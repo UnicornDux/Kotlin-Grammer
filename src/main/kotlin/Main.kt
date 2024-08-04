@@ -12,31 +12,32 @@ import base.variable.range
 import base.variable.variable
 import coroutines.coroutines
 import app.calculate
+import http.httpServer
+import func.funFold
 
 fun main(args: Array<String>) {
   // Try adding program arguments via Run/Debug configuration.
   // Learn more about running applications:
   // https://www.jetbrains.com/help/idea/running-applications.html.
   println("Program arguments: ${args.joinToString()}")
-
-  // coroutines()
-  calculate()
+  funFold()
 }
 
 fun app() {
-  // calculate()
-  //
-  // base()
-  // advance()
-  //
-  startServer()
+  calculate()
+}
+
+// 服务端
+fun server() {
+  httpServer()
 }
 
 // 高级特性
 fun advance() {
-  //
+  // 协程
   coroutinue()
 
+  // 表达式
   lambda()
 }
 
