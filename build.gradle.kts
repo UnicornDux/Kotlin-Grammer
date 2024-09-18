@@ -3,10 +3,9 @@ plugins {
   application
 }
 
-group = "org.example"
+group = "org.edu"
 
 version = "1.0-SNAPSHOT"
-
 
 dependencies {
   testImplementation(kotlin("test"))
