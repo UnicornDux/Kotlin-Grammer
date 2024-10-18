@@ -21,7 +21,7 @@ fun funFold() {
   //
   // fold 的变体
   //  1. foldIndexed(initial: R, operation(int, R, T) -> R)
-  //  2. foldRight(inital: R, operation(T, R) -> R)  // 操作的元素倒置过来, 参数也倒置过来
+  //  2. foldRight(initial: R, operation(T, R) -> R)  // 操作的元素倒置过来, 参数也倒置过来
   //  3. foldRightIndexed(initial: R, operartion(int, T, R) -> R)
   //
   (0..10).fold(StringBuilder()) { acc, i ->
@@ -29,8 +29,9 @@ fun funFold() {
   }
   //
   //
-  val os = arrayOf("windows", "linux", "macos", "bsd").foldRight(StringBuilder()) { i, acc ->
-    acc.append(i).append(",")
-  }
+  val os = arrayOf("windows", "linux", "macos", "bsd")
+      .foldRight(StringBuilder()) { i, acc ->
+        acc.append(i).append(",")
+      }
   println(os)
 }

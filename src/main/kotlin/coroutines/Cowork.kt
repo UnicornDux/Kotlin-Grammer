@@ -7,7 +7,7 @@ import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 
-fun coroutines() {
+fun runWork() {
   println("------------coroutines------------------")
   lauchFunc()
   asyncFunc()
