@@ -1,5 +1,7 @@
 package base.oop
 
+import base.function.add
+
 fun enums() {
   println(Menu.HOME)
   println(Menu.BUFFER.alias)
@@ -15,8 +17,8 @@ interface Operation {
 //  1.枚举可以定义抽象方法, 则它的所有实例对象必须要实现这样的方法
 //  2.枚举可以事先接口，则它的所有实例对象必须要实现接口中的方法
 enum class Menu(
-    val alias: String,
-    address: String,
+  val alias: String,
+  val address: String,
 ) : Operation {
   HOME("home", "alibaba") {
     override fun allocate() {
@@ -27,5 +29,15 @@ enum class Menu(
     override fun allocate() {
       println(this.alias)
     }
-  },
+  }, ;
+
+  companion object {
+    private val ELE_ALIAS_MAP = HashMap<String, Menu>()
+
+    init {
+      values().forEach { ELE_ALIAS_MAP.put(it.alias, it) }
+    }
+
+    fun matchValue(alias: String): Menu? = ELE_ALIAS_MAP.get(alias)
+  }
 }
