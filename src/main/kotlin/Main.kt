@@ -27,14 +27,17 @@ import dsl.dom
 import dsl.domdsl
 import coroutine.seq
 import regex.regex
+import flowx.flowDeclare
+import flowx.useFlow
 
 fun main(args: Array<String>) {
   // Try adding program arguments via Run/Debug configuration.
   // Learn more about running applications:
   // https://www.jetbrains.com/help/idea/running-applications.html.
   println("Program arguments: ${args.joinToString()}")
-  regex()
+  useFlow()
 }
+
 
 fun dsl() {
   dom()
@@ -46,7 +49,10 @@ fun app() {
   summary()
   // 讲解协程概念的 swing 窗口程序 
   show()
+  // 正则表达式
+  regex()
 }
+
 
 // 服务端
 fun server() {

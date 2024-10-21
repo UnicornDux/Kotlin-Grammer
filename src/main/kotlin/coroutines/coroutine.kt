@@ -1,12 +1,18 @@
 package coroutines
 
-// kotlin 中的携程
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.cancelAndJoin
+import kotlin.system.measureTimeMillis
 
 fun coroutine() {
-  //  runAsync()
+   runAsync()
+   cancel()
 }
 
-/*
 fun runAsync() = runBlocking {
   // 系统函数统计时间
   val time = measureTimeMillis {
@@ -31,10 +37,10 @@ suspend fun doSomethingUsefulTwo(): Int {
   return 29
 }
 
-
-fun cancel = runBlocking {
+fun cancel() = runBlocking {
   val startTime = System.currentTimeMillis()
-  val job = launch(Dispatchers.Default){
+  val isActive = true
+  val job = launch(Dispatchers.Default) {
     var nextPrintTime = startTime
     var i = 0
     while(isActive) { // cancellable computation loop
@@ -49,7 +55,4 @@ fun cancel = runBlocking {
   println("main: I'm tired of waiting")
   job.cancelAndJoin() // cancels the job and waits for it's completion
   println("main: Now I can quit.")
-
 }
-
-*/
