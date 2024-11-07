@@ -29,15 +29,12 @@ enum class Menu(
     override fun allocate() {
       println(this.alias)
     }
-  }, ;
-
+  };
   companion object {
-    private val ELE_ALIAS_MAP = HashMap<String, Menu>()
-
+    private val ElE_ALIAS_MAP = HashMap<String, Menu>();
     init {
-      values().forEach { ELE_ALIAS_MAP.put(it.alias, it) }
+        values().forEach { ElE_ALIAS_MAP[it.alias] = it }
     }
-
-    fun matchValue(alias: String): Menu? = ELE_ALIAS_MAP.get(alias)
+    fun matchValue(alias: String): Menu? = ElE_ALIAS_MAP[alias]
   }
 }

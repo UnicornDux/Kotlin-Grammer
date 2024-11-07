@@ -1,11 +1,10 @@
-package kotlin;
-import kotlin.base.oop.Menu;
+import base.oop.Menu;
 
 public class Call {
-  public static  void main (String[] args) {
 
-  }
+    public static void main(String[] args) {
+
+        Menu.Companion.matchValue(args[0]);
+
+    }
 }
-
-
-
