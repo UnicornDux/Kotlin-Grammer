@@ -27,7 +27,6 @@ import dsl.dom
 import dsl.domdsl
 import coroutine.seq
 import regex.regex
-import flowx.flowDeclare
 import flowx.useFlow
 import flowx.useStateFlow
 
@@ -39,7 +38,6 @@ fun main(args: Array<String>) {
   useStateFlow()
 }
 
-
 fun coFlow() {
   useFlow()
 }
@@ -47,17 +45,16 @@ fun coFlow() {
 fun dsl() {
   dom()
   domdsl()
-} 
+}
 
 fun app() {
   calculate()
   summary()
-  // 讲解协程概念的 swing 窗口程序 
+  // 讲解协程概念的 swing 窗口程序
   show()
   // 正则表达式
   regex()
 }
-
 
 // 服务端
 fun server() {
