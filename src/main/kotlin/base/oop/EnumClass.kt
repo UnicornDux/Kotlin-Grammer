@@ -1,7 +1,5 @@
 package base.oop
 
-import base.function.add
-
 fun enums() {
   println(Menu.HOME)
   println(Menu.BUFFER.alias)
@@ -29,7 +27,7 @@ enum class Menu(
     override fun allocate() {
       println(this.alias)
     }
-  };
+  }, ;
   companion object {
     private val ElE_ALIAS_MAP = HashMap<String, Menu>();
     init {
