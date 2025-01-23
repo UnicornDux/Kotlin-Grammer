@@ -29,17 +29,20 @@ import coroutine.seq
 import regex.regex
 import flowx.useFlow
 import flowx.useStateFlow
+import flowx.sharedFlow
 
 fun main(args: Array<String>) {
   // Try adding program arguments via Run/Debug configuration.
   // Learn more about running applications:
   // https://www.jetbrains.com/help/idea/running-applications.html.
   println("Program arguments: ${args.joinToString()}")
-  useStateFlow()
+  coFlow()
 }
 
 fun coFlow() {
-  useFlow()
+  // useFlow()
+  // useStateFlow()
+  sharedFlow()
 }
 
 fun dsl() {
