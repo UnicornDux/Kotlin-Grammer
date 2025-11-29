@@ -7,6 +7,7 @@ import base.oop.data
 import base.oop.enums
 import base.oop.oop
 import base.oop.seal
+import base.oop.runGeneric
 import base.variable.range
 import base.variable.variable
 import coroutines.coroutine
@@ -23,6 +24,8 @@ import func.runTake
 import func.run
 import func.curry
 import func.partial
+import func.alsoFun
+import func.runFunc
 import dsl.dom
 import dsl.domdsl
 import coroutine.seq
@@ -31,12 +34,15 @@ import flowx.useFlow
 import flowx.useStateFlow
 import flowx.sharedFlow
 
+
 fun main(args: Array<String>) {
   // Try adding program arguments via Run/Debug configuration.
   // Learn more about running applications:
   // https://www.jetbrains.com/help/idea/running-applications.html.
   println("Program arguments: ${args.joinToString()}")
-  coFlow()
+  // coFlow()
+  // func.runTake()
+  runGeneric()
 }
 
 fun coFlow() {
@@ -73,23 +79,25 @@ fun advance() {
   // 表达式
   lambda()
 
-  funFold()
-  // 高阶函数
-  runFilter()
-  runTake()
+  // kotlin 内置的序列
+  seq()
+}
 
-  useLet()
-  useApply()
-
+fun utilitings() {
+  func.useLet()
+  func.useApply()
   func.run()
-
+  func.runFunc()
+  func.alsoFun()
   // 柯里化
   func.curry()
   // 偏函数
   func.partial()
 
-  // kotlin 内置的序列
-  seq()
+  // 高阶函数
+  func.runFilter()
+  func.runTake()
+  func.funFold()
 }
 
 // 基础编码能力

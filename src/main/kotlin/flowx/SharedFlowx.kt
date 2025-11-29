@@ -5,6 +5,7 @@ import kotlinx.coroutines.launch
 import kotlinx.coroutines.runBlocking
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.channels.BufferOverflow
+import kotlinx.coroutines.async
 
 // SharedFlow 是一个热流，它允许将数据多次广播到多个收集器,
 // 在生产者和消费者之间共享数据, 可以配置缓冲区
@@ -34,7 +35,7 @@ fun sharedFlow()  = runBlocking{
   }
 
   launch {
-    repeat(100) {
+    repeat(10) {
       state.emit("work$it")
     }
   }

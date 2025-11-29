@@ -12,6 +12,8 @@ fun inner() {
 class Q {
   fun out() {
     println("out")
+    // 外部类可以直接访问内部类
+    println(I().ini())
   }
 
   // 内部类使用 inner 修饰
@@ -29,8 +31,14 @@ class Q {
   class L {
     fun lun() {
       // 这时候相当于 静态内部类，无法访问外部类的实例
-      // 只能访问外部类中的静态变量或者方法，
       // this@Q.out()
+      //
+      // 只能访问外部类中的静态变量或者方法，
+      println(a)
     }
+  }
+
+  companion object {
+    const val a = 10
   }
 }
