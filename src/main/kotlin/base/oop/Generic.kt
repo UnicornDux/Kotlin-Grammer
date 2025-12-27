@@ -1,4 +1,6 @@
-package base.oop;
+package base.oop
+
+import kotlin.reflect.KClass
 
 // kotlin 中的泛型
 fun runGeneric() {
@@ -79,30 +81,26 @@ class Pipe3 {
   }
 }
 
-data class Koa(val name: String)
+data class Koa(
+  val name: String,
+)
 
-data class Netty(val name: String)
+data class Netty(
+  val name: String,
+)
 
-data class Ktor(val name: String)
+data class Ktor(
+  val name: String,
+)
 
-inline fun <reified T> getClass(): KClass<T> {
-  return T::class
-}
+inline fun <reified T : Any> getClass(): KClass<T> = T::class
 
-inline fun <reified T> getClass2(): Class<T> {
-  return T::class.java
-}
+inline fun <reified T> getClass2(): Class<T> = T::class.java
 
 inline fun <reified T> checkType(value: Any) {
   if (value is T) {
     println("value is type ${T::class}")
-  }else {
+  } else {
     println("value is not type ${T::class}")
   }
 }
-
-
-
-
-
-
