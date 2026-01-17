@@ -1,5 +1,11 @@
 package base.oop
 
+import kotlinx.coroutines.runBlocking
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.async
+import kotlinx.coroutines.delay
+
 fun oop() {
   val f = First()
   // 调用了 get 方法
@@ -50,3 +56,12 @@ internal class C
 // 缺省的情况等价于
 // public final class D{}
 class D
+
+fun work = runBlocking {
+  val defer = async {
+    delay(1000)
+    "work"
+  }
+  val result = defer.await()
+  println(result)
+}

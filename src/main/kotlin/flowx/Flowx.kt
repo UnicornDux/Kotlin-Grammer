@@ -73,7 +73,7 @@ fun flowException() = runBlocking<Unit> {
   println("--------------flatException------------")
 }
 
-// 流的组合 
+// 流的组合
 fun flowCombine() = runBlocking {
   val flowA = flowOf("A", "B", "C")
   val flowB = flowOf(1, 2, 3)
@@ -125,6 +125,7 @@ fun flatMapMergeFlow() = runBlocking {
   }.collect{ print("$it ")}
   println()
   println("--------------flatMerge------------")
+
 }
 
 // 流的截取
