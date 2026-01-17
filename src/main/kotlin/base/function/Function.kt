@@ -21,6 +21,7 @@ fun function() {
   // 当使用指定参数传参的时候，就可以省略展开的操作
   six(*arrayOf("1", "2", "3"))
 
+
   seven("hello")
   seven("hello", 100)
 
@@ -80,7 +81,11 @@ fun five(
 fun six(vararg args: String) {
   println(args::class)
   println(args.contentToString())
-  for (i in args.indices) {
+
+  // vararg 对应的是不可修改的数组
+  val p: Array<out String> = args
+
+  for (i in p.indices) {
     println(args[i])
   }
 }

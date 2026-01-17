@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="4fa19825-b0e5-4677-bb1f-af61098d3091" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/base/innerfunc/funcAlso.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/base/innerfunc/funcLet.kt" afterDir="false" />
-    </list>
+    <list default="true" id="4fa19825-b0e5-4677-bb1f-af61098d3091" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,27 +15,64 @@
       <ProjectState />
     </projectState>
   </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kotlin-grammer" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kotlin-grammer" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="kotlin-grammer" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Kotlin Script" />
         <option value="Kotlin Class" />
         <option value="Kotlin File" />
+        <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
+        <option name="customMavenHome" value="$PROJECT_DIR$/../../Scoop/apps/maven/current" />
         <option name="localRepository" value="D:\maven_repository\repo_current" />
-        <option name="mavenHome" value="$PROJECT_DIR$/../../Scoop/apps/maven/current" />
+        <option name="mavenHomeTypeForPersistence" value="CUSTOM" />
         <option name="userSettingsFile" value="F:\Scoop\apps\maven\current\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
   </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2OQDHLbfm3LbI79MEdZEkPujXE0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -47,11 +81,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.Build kotlin-grammer.executor": "Run",
+    "Gradle.kotlin-grammer [assemble].executor": "Run",
+    "Kotlin.MainKt.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
     "ktor.last.update.timestamp": "1683957220454",
     "last_opened_file_path": "D:/JavaCode/kotlin-grammer",
     "node.js.detected.package.eslint": "true",
@@ -60,10 +98,16 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.0",
+    "project.structure.proportion": "0.14941691",
     "project.structure.side.proportion": "0.37079573",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "settings.editor.splitter.proportion": "0.29004666",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "kotlin-gradle-user-dirs": [
+      "D:\\Scoop\\apps\\gradle\\current\\.gradle"
+    ]
   }
 }]]></component>
   <component name="RecentsManager">
@@ -72,7 +116,29 @@
       <recent name="F:\WorkSpace\kotlin-grammer\src\main\kotlin\branch" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Kotlin.MainKt">
+    <configuration name="kotlin-grammer [assemble]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="assemble" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="MainKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MainKt" />
       <module name="kotlin-grammer.main" />
@@ -83,8 +149,17 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.MainKt" />
+        <item itemvalue="Gradle.kotlin-grammer [assemble]" />
       </list>
     </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+      </set>
+    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -110,6 +185,12 @@
       <workItem from="1683204782539" duration="5337000" />
       <workItem from="1683248476095" duration="1930000" />
       <workItem from="1683957212909" duration="2775000" />
+      <workItem from="1715677257847" duration="790000" />
+      <workItem from="1716975008596" duration="215000" />
+      <workItem from="1717056069951" duration="1121000" />
+      <workItem from="1724378250813" duration="2552000" />
+      <workItem from="1724552873273" duration="113000" />
+      <workItem from="1729489814025" duration="17043000" />
     </task>
     <task id="LOCAL-00001" summary="git init">
       <created>1683249331992</created>
@@ -195,7 +276,15 @@
       <option name="project" value="LOCAL" />
       <updated>1683249731317</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Flow 测试样例">
+      <option name="closed" value="true" />
+      <created>1729509064841</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1729509064842</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,7 +314,8 @@
     <MESSAGE value="kotlin 基础之对对象表达式" />
     <MESSAGE value="kotlin 基础之单例模式" />
     <MESSAGE value="kotlin 基础之程序入口类" />
-    <option name="LAST_COMMIT_MESSAGE" value="kotlin 基础之程序入口类" />
+    <MESSAGE value="Flow 测试样例" />
+    <option name="LAST_COMMIT_MESSAGE" value="Flow 测试样例" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -17,11 +17,9 @@ fun useStateFlow() {
   stateEmit()
 }
 
-val coroutineScope = CoroutineScope(Dispatchers.Default)
-
 fun stateCollect() = runBlocking {
   val x = MutableStateFlow(10)
-  coroutineScope.launch {
+  launch {
     // 订阅数据，
     // collect 方法是一个挂起函数，因此必须要运行在协程作用域中，(如果放在主进程中会一直阻塞)
     //
@@ -29,7 +27,7 @@ fun stateCollect() = runBlocking {
       print("$value ")
     }
   }
-  coroutineScope.launch {
+  launch {
     // 修改数据,
     x.value = 20
     delay(100)
@@ -44,7 +42,7 @@ fun stateCollect() = runBlocking {
 
 fun stateCollectIndex() = runBlocking {
   val x = MutableStateFlow(0)
-  coroutineScope.launch {
+  launch {
     x.collectIndexed{ index, value ->
       println("$index _ $value")
     }
@@ -65,7 +63,7 @@ fun stateOnEach() = runBlocking {
 
   val cancelable = x.onEach { println(it) }
 
-  coroutineScope.launch {
+  launch {
     repeat(100)  {
       x.emit(10);
       delay(10)
@@ -77,7 +75,7 @@ fun stateOnEach() = runBlocking {
 
 fun stateCollectLatest() = runBlocking {
   val x = MutableStateFlow(0)
-  coroutineScope.launch {
+  launch {
     x.collectLatest { value ->  print("$value ") }
   }
   println()
@@ -97,7 +95,7 @@ fun stateTakeWhile() = runBlocking {
   val x = MutableStateFlow(10)
   println()
   println("--------takeWhile------------")
-  coroutineScope.launch {
+  launch {
     x.takeWhile { ele -> ele > 100 }.collect { x -> print("$x ") }
   }
   x.value = 200
@@ -118,7 +116,7 @@ fun stateTakeIf() = runBlocking {
   val x = MutableStateFlow(20)
   println()
   println("--------takeIf------------")
-  coroutineScope.launch {
+  launch {
     x.takeIf { key -> key.value > 10 }?.collect { key -> print("$key ") }
   }
   x.value = 20
@@ -136,7 +134,7 @@ fun stateTakeUnless() = runBlocking {
   val x = MutableStateFlow(1)
   println()
   println("--------takeUnless--------")
-  coroutineScope.launch {
+  launch {
     x.takeUnless { x -> x.value < 10 }?.collect { x -> print("$x ")}
   }
   x.value = 20
@@ -152,7 +150,7 @@ fun stateTakeUnless() = runBlocking {
 //
 fun stateEmit() = runBlocking {
   val x = MutableStateFlow(10)
-  coroutineScope.launch {
+  launch {
     x.collect { value -> print("$value ") }
   }
   println()
