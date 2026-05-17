@@ -8,6 +8,7 @@ import base.method.method
 import base.oop.data
 import base.oop.enums
 import base.oop.oop
+import base.oop.runGeneric
 import base.oop.seal
 import base.variable.range
 import base.variable.variable
