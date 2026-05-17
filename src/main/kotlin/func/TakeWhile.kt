@@ -1,6 +1,6 @@
 package func
 
-fun runTake(){
+fun runTake() {
   useTakeWhile()
   uesTakeIf()
   useTakeUnless()
