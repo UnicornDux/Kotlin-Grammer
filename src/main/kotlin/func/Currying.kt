@@ -8,10 +8,12 @@ fun log(tag: String, target: OutputStream, message: Any?) {
   target.write("$tag $message\n".toByteArray())
 }
 
-// fun log(tag: String) = fun(target: OutputStream) = fun(message: Any?) = target.write("$tag $message\n".toByteArray())
+// fun log(tag: String) = fun(target: OutputStream) = fun(message: Any?) = target.write("$tag
+// $message\n".toByteArray())
 
 // 通用的柯里化的写法
-fun <P1, P2, P3, R> Function3<P1, P2, P3, R>.curried() = fun(p1: P1) = fun(p2: P2) = fun(p3: P3) = this(p1, p2, p3)
+fun <P1, P2, P3, R> Function3<P1, P2, P3, R>.curried() =
+  fun(p1: P1) = fun(p2: P2) = fun(p3: P3) = this(p1, p2, p3)
 
 fun curry() {
   log("berry", System.out, "hello world")
@@ -31,7 +33,7 @@ fun partial() {
   makeStringFromGbkBytes("我是中国人".toByteArray(charset("GBK")))
 }
 
-val makeString = fun (byteArray: ByteArray, charset: Charset): String = String(byteArray, charset)
+val makeString = fun(byteArray: ByteArray, charset: Charset): String = String(byteArray, charset)
 
 val makeStringFromGbkBytes = makeString.partialSecond(charset("GBK"))
 

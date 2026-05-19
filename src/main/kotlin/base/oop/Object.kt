@@ -8,9 +8,9 @@ fun objects() {
   // 需要借助 object 传递参数 (低层使用的 java 的 lambda 表达式)
   // 值得注意的时，这里并不会转换为 lambda 表达式
   request(
-      object : CallBack {
-        override fun loading() {}
-      },
+    object : CallBack {
+      override fun loading() {}
+    }
   )
 
   // 如果我们在 java 中的 lambda 接口在 kotlin 中被使用，

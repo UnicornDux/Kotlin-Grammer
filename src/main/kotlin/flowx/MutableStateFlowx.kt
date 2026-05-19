@@ -23,9 +23,7 @@ fun stateCollect() = runBlocking {
     // 订阅数据，
     // collect 方法是一个挂起函数，因此必须要运行在协程作用域中，(如果放在主进程中会一直阻塞)
     //
-    x.collect { value ->
-      print("$value ")
-    }
+    x.collect { value -> print("$value ") }
   }
   launch {
     // 修改数据,
@@ -42,11 +40,7 @@ fun stateCollect() = runBlocking {
 
 fun stateCollectIndex() = runBlocking {
   val x = MutableStateFlow(0)
-  launch {
-    x.collectIndexed{ index, value ->
-      println("$index _ $value")
-    }
-  }
+  launch { x.collectIndexed { index, value -> println("$index _ $value") } }
   println()
   println("--------------collectIndex-----------")
   x.emit(20)
@@ -58,14 +52,13 @@ fun stateCollectIndex() = runBlocking {
 }
 
 fun stateOnEach() = runBlocking {
-
   val x = MutableStateFlow(1)
 
   val cancelable = x.onEach { println(it) }
 
   launch {
-    repeat(100)  {
-      x.emit(10);
+    repeat(100) {
+      x.emit(10)
       delay(10)
     }
   }
@@ -75,9 +68,7 @@ fun stateOnEach() = runBlocking {
 
 fun stateCollectLatest() = runBlocking {
   val x = MutableStateFlow(0)
-  launch {
-    x.collectLatest { value ->  print("$value ") }
-  }
+  launch { x.collectLatest { value -> print("$value ") } }
   println()
   println("------------stateLatest------------")
   x.emit(30)
@@ -88,16 +79,13 @@ fun stateCollectLatest() = runBlocking {
   delay(10)
 }
 
-
 // takeWhile 获取数据，从流中获取满足条件的值，直到遇到不满足条件的数据立即终止订阅
 //
 fun stateTakeWhile() = runBlocking {
   val x = MutableStateFlow(10)
   println()
   println("--------takeWhile------------")
-  launch {
-    x.takeWhile { ele -> ele > 100 }.collect { x -> print("$x ") }
-  }
+  launch { x.takeWhile { ele -> ele > 100 }.collect { x -> print("$x ") } }
   x.value = 200
   delay(100)
   x.value = 120
@@ -116,9 +104,7 @@ fun stateTakeIf() = runBlocking {
   val x = MutableStateFlow(20)
   println()
   println("--------takeIf------------")
-  launch {
-    x.takeIf { key -> key.value > 10 }?.collect { key -> print("$key ") }
-  }
+  launch { x.takeIf { key -> key.value > 10 }?.collect { key -> print("$key ") } }
   x.value = 20
   delay(100)
   x.value = 10
@@ -126,7 +112,6 @@ fun stateTakeIf() = runBlocking {
   x.value = 20
   delay(1000)
 }
-
 
 // takeUnless false 时获取数据, true 时返回 null
 // TODO: ?? 未预期的结果, 非 kotlinx.coroutine.flow 包中的内容
@@ -134,9 +119,7 @@ fun stateTakeUnless() = runBlocking {
   val x = MutableStateFlow(1)
   println()
   println("--------takeUnless--------")
-  launch {
-    x.takeUnless { x -> x.value < 10 }?.collect { x -> print("$x ")}
-  }
+  launch { x.takeUnless { x -> x.value < 10 }?.collect { x -> print("$x ") } }
   x.value = 20
   delay(100)
   x.value = 10
@@ -145,14 +128,11 @@ fun stateTakeUnless() = runBlocking {
   delay(1000)
 }
 
-
 // 使用发送的方式修改 MutableStateFlow 的值
 //
 fun stateEmit() = runBlocking {
   val x = MutableStateFlow(10)
-  launch {
-    x.collect { value -> print("$value ") }
-  }
+  launch { x.collect { value -> print("$value ") } }
   println()
   println("----------- emit -----------")
   x.emit(20)

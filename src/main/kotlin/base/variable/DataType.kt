@@ -57,11 +57,12 @@ fun stringType() {
 
   // 多行字符串模板
   val multi =
-      """
+    """
         ------------------------------------
         kotlin
         $say
-    """.trimIndent()
+    """
+      .trimIndent()
 
   println(multi)
 }

@@ -21,6 +21,7 @@ class A : Peek(), Call, Back {
     super<Call>.finish()
     super<Back>.finish()
   }
+
   // 实现抽象类的方法
   override fun pop() {}
 }

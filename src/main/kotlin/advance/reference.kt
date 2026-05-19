@@ -28,6 +28,7 @@ fun call(callback: () -> Unit) {
 
 class Fact {
   val a = 1
+
   fun fn() {
     println(a)
   }

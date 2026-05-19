@@ -21,10 +21,8 @@ fun function() {
   // 当使用指定参数传参的时候，就可以省略展开的操作
   six(*arrayOf("1", "2", "3"))
 
-
   seven("hello")
   seven("hello", 100)
-
 
   // 指定传入参数的参数名称
   point(a = 10, c = 20, b = { println(it) })
@@ -48,7 +46,6 @@ fun function() {
  * - 函数参数可以没有，可以为多个，定义可变参数, 参数可赋默认值
  * - 函数的返回值也是可选的，当没有时默认返回的时 Unit 类型
  */
-
 fun first() {
   // 这是有一个没有参数,没有返回值的函数
 }
@@ -72,10 +69,7 @@ fun four(args: String): String = args
 fun hello(x: Int) = x
 
 // 多种类型的参数
-fun five(
-  arg1: String,
-  arg2: Int,
-) {}
+fun five(arg1: String, arg2: Int) {}
 
 // 可变参数
 fun six(vararg args: String) {
@@ -92,21 +86,14 @@ fun six(vararg args: String) {
 
 // 参数默认值,
 //
-fun seven(
-  arg1: String,
-  arg2: Int = 12,
-) {}
+fun seven(arg1: String, arg2: Int = 12) {}
 
 // 可以通过参数名称，对传入的参数进行指定,
 // > 当没有调整参数的顺序的时候可以指定某些参数的参数名,某些不指定
 // > 当调整了参数的顺序，则所有的参数都需要进行参数名的指定
 // 调用的时候可以参考
 // point(a=10,b=1,c={ println(it)})
-fun point(
-  a: Int,
-  b: (Int) -> Unit,
-  c: Int = 2,
-) {
+fun point(a: Int, b: (Int) -> Unit, c: Int = 2) {
   b(a + c)
 }
 
@@ -127,6 +114,7 @@ fun lambdaArgs(args: (String) -> String) {
 
 // 函数可以被赋值给变量，这就变成了一个匿名的函数，
 // 实际在使用的时候，其实是在调用变量的 invoke 方法
-val peek = fun(a:Int): Int {
-  return 10 + a
-}
+val peek =
+  fun(a: Int): Int {
+    return 10 + a
+  }

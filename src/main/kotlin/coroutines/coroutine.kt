@@ -1,16 +1,16 @@
 package coroutines
 
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.async
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.cancelAndJoin
 import kotlin.system.measureTimeMillis
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.cancelAndJoin
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
 
 fun coroutine() {
-   runAsync()
-   cancel()
+  runAsync()
+  cancel()
 }
 
 fun runAsync() = runBlocking {
@@ -40,17 +40,18 @@ suspend fun doSomethingUsefulTwo(): Int {
 fun cancel() = runBlocking {
   val startTime = System.currentTimeMillis()
   val isActive = true
-  val job = launch(Dispatchers.Default) {
-    var nextPrintTime = startTime
-    var i = 0
-    while(isActive) { // cancellable computation loop
-      // print a message twice a second
-      if (System.currentTimeMillis() >= nextPrintTime) {
-        println("job: I'm sleeping ${i++}")
-        nextPrintTime += 500L
+  val job =
+    launch(Dispatchers.Default) {
+      var nextPrintTime = startTime
+      var i = 0
+      while (isActive) { // cancellable computation loop
+        // print a message twice a second
+        if (System.currentTimeMillis() >= nextPrintTime) {
+          println("job: I'm sleeping ${i++}")
+          nextPrintTime += 500L
+        }
       }
     }
-  }
   delay(1300L) // delay a bit
   println("main: I'm tired of waiting")
   job.cancelAndJoin() // cancels the job and waits for it's completion

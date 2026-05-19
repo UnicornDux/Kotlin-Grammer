@@ -14,28 +14,21 @@ fun extendFunction() {
 /**
  * > 扩展方法的应用
  *
- *  扩展某个类型的一些方法，例如常用的与某个类的一些方法，这时候我们
- *  应该想到这些方法能不能直接赋予这个类型，但是标准库中定义的内容又
- *  不能修改
- *
+ * 扩展某个类型的一些方法，例如常用的与某个类的一些方法，这时候我们 应该想到这些方法能不能直接赋予这个类型，但是标准库中定义的内容又 不能修改
  * > 这时候如果在当前模块中扩展这些类型。直接让这些方法属于这个类
  *
  * > 有时候可以把扩展函数定义为中缀表达式
  *
- *
- *
  * > 扩展函数在 java 中怎么完成调用呢 ？
  *
- *   反解字节码可以看出来，扩展函数的实现是在类中定义了静态方法
- *   增加了一个参数，当前的参数就是扩展类型的实例
+ * 反解字节码可以看出来，扩展函数的实现是在类中定义了静态方法 增加了一个参数，当前的参数就是扩展类型的实例
  *
- *   public final static String multiple(String receiver, int times) {
+ * public final static String multiple(String receiver, int times) {
  *
- *      // 函数内部的 this 使用 receiver 这个实例来替代
+ * // 函数内部的 this 使用 receiver 这个实例来替代
  *
- *   }
+ * }
  */
-
 fun String.multiple(times: Int): String {
   val build = StringBuffer()
   for (i in 0 until times) {

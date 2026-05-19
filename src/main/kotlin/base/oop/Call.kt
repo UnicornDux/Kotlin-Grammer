@@ -1,7 +1,7 @@
-import base.oop.Menu;
+import base.oop.Menu
 
 class Call {
   fun useEnum() {
-      Menu.matchValue("Home")
+    Menu.matchValue("Home")
   }
 }

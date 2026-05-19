@@ -48,10 +48,12 @@ fun whenCase() {
   // 用于数值判断
   val a = Date().time % 10
   when (a.toInt()) {
-    1, 2 -> {
+    1,
+    2 -> {
       println("0 < && < 3")
     }
-    5, 6 -> {
+    5,
+    6 -> {
       println("4 < && < 7")
     }
     else -> {
@@ -80,11 +82,13 @@ fun whenCase() {
   // 表示式的最后一行为返回值，不需要 return, 最后一行不返回则是 Unit
   val x =
     when (a.toInt()) {
-      1, 3 -> {
+      1,
+      3 -> {
         println("plus")
         a + 10
       }
-      5, 6 -> {
+      5,
+      6 -> {
         println("minus")
         a - 3
       }

@@ -2,11 +2,7 @@ package func
 
 import kotlin.arrayOf
 
-/**
- * 由于 reduce 没有初始值可以用，所以我们可以使用 Fold
- *
- */
-
+/** 由于 reduce 没有初始值可以用，所以我们可以使用 Fold */
 fun funFold() {
   //
   // fold 作为一个可以指定初始值的 reduce
@@ -24,14 +20,12 @@ fun funFold() {
   //  2. foldRight(initial: R, operation(T, R) -> R)  // 操作的元素倒置过来, 参数也倒置过来
   //  3. foldRightIndexed(initial: R, operartion(int, T, R) -> R)
   //
-  (0..10).fold(StringBuilder()) { acc, i ->
-    acc.append(i).append(",")
-  }
+  (0..10).fold(StringBuilder()) { acc, i -> acc.append(i).append(",") }
   //
   //
-  val os = arrayOf("windows", "linux", "macos", "bsd")
-      .foldRight(StringBuilder()) { i, acc ->
-        acc.append(i).append(",")
-      }
+  val os =
+    arrayOf("windows", "linux", "macos", "bsd").foldRight(StringBuilder()) { i, acc ->
+      acc.append(i).append(",")
+    }
   println(os)
 }

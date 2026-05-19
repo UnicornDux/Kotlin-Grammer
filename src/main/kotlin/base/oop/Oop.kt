@@ -1,10 +1,8 @@
 package base.oop
 
-import kotlinx.coroutines.runBlocking
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.async
 import kotlinx.coroutines.delay
+import kotlinx.coroutines.runBlocking
 
 fun oop() {
   val f = First()
@@ -22,7 +20,7 @@ fun oop() {
       override fun finish() {
         println("finish")
       }
-    },
+    }
   )
 }
 
@@ -57,7 +55,7 @@ internal class C
 // public final class D{}
 class D
 
-fun work = runBlocking {
+fun work() = runBlocking {
   val defer = async {
     delay(1000)
     "work"

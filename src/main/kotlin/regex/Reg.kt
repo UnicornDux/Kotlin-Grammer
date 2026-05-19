@@ -30,17 +30,18 @@ fun substr() {
 fun replaceRegex() {
   val pwd = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
-  val new = pwd.replace(Regex("[AKMNO]")) {
-    // 每一个满足正则的字符都会进入到后续的回调函数中
-    println(it.value)
-    when (it.value) {
-      "A" -> "a"
-      "K" -> "k"
-      "M" -> "m"
-      "N" -> "n"
-      "O" -> "o"
-      else -> "😄"
+  val new =
+    pwd.replace(Regex("[AKMNO]")) {
+      // 每一个满足正则的字符都会进入到后续的回调函数中
+      println(it.value)
+      when (it.value) {
+        "A" -> "a"
+        "K" -> "k"
+        "M" -> "m"
+        "N" -> "n"
+        "O" -> "o"
+        else -> "😄"
+      }
     }
-  }
   println(new)
 }

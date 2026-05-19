@@ -17,11 +17,11 @@ class Server(port: Int) {
     router.get("/") { _ -> HttpResponse(Version.HTTP_1_1, 200, "OK") }
     router.get("/hello") { _ ->
       HttpResponse(
-          Version.HTTP_1_1,
-          200,
-          "OK",
-          headers = mapOf("Content-Type" to "text/html"),
-          body = "<h1>Hello Kotlin</h1>"
+        Version.HTTP_1_1,
+        200,
+        "OK",
+        headers = mapOf("Content-Type" to "text/html"),
+        body = "<h1>Hello Kotlin</h1>",
       )
     }
     router.handle(serverSocket)
@@ -31,6 +31,7 @@ class Server(port: Int) {
 class Router {
 
   private val routes = mutableListOf<Route>()
+
   fun get(path: String, handler: Handler) {
     routes.add(Route(Method.GET, path, handler))
   }
@@ -41,24 +42,26 @@ class Router {
       val reader = client.getInputStream().bufferedReader()
       val writer = client.getOutputStream().bufferedWriter()
       val httpRequest = HttpRequest.parse(reader)
-      routes.findLast { it.method == httpRequest.method && it.path == httpRequest.path }?.let {
-        val toString = it.handler.invoke(httpRequest).toString()
-        writer.write(toString)
-        writer.flush()
-      }
-          ?: let {
-            writer.write(
-                HttpResponse(
-                        Version.HTTP_1_1,
-                        404,
-                        "NotFound",
-                        headers = mapOf("Content-Type" to "text/html"),
-                        body = "<h1> 404 Not Found </h1>"
-                    )
-                    .toString()
-            )
-            writer.flush()
-          }
+      routes
+        .findLast { it.method == httpRequest.method && it.path == httpRequest.path }
+        ?.let {
+          val toString = it.handler.invoke(httpRequest).toString()
+          writer.write(toString)
+          writer.flush()
+        }
+        ?: let {
+          writer.write(
+            HttpResponse(
+                Version.HTTP_1_1,
+                404,
+                "NotFound",
+                headers = mapOf("Content-Type" to "text/html"),
+                body = "<h1> 404 Not Found </h1>",
+              )
+              .toString()
+          )
+          writer.flush()
+        }
       client.close()
     }
   }
@@ -69,11 +72,11 @@ typealias Handler = (HttpRequest) -> HttpResponse
 data class Route(val method: Method, val path: String, val handler: Handler)
 
 data class HttpRequest(
-    var method: Method,
-    val path: String,
-    val version: Version,
-    val headers: Map<String, String>,
-    val body: String
+  var method: Method,
+  val path: String,
+  val version: Version,
+  val headers: Map<String, String>,
+  val body: String,
 ) {
   companion object {
     fun parse(reader: BufferedReader): HttpRequest {
@@ -110,11 +113,11 @@ data class HttpRequest(
 }
 
 data class HttpResponse(
-    val version: Version = Version.HTTP_1_1,
-    val statusCode: Int,
-    val statusText: String,
-    val headers: Map<String, String> = emptyMap(),
-    val body: String = ""
+  val version: Version = Version.HTTP_1_1,
+  val statusCode: Int,
+  val statusText: String,
+  val headers: Map<String, String> = emptyMap(),
+  val body: String = "",
 ) {
 
   override fun toString(): String {
@@ -123,7 +126,8 @@ data class HttpResponse(
       ${headers.map{"${it.key}: ${it.value}"}.joinToString("\n")}
 
       $body
-    """.trimIndent()
+    """
+      .trimIndent()
   }
 }
 
@@ -134,11 +138,11 @@ enum class Method {
 
   companion object {
     fun parse(method: String): Method =
-        when (method) {
-          "GET" -> GET
-          "POST" -> POST
-          else -> UNKNOWN
-        }
+      when (method) {
+        "GET" -> GET
+        "POST" -> POST
+        else -> UNKNOWN
+      }
   }
 }
 
@@ -148,10 +152,10 @@ enum class Version {
 
   companion object {
     fun parse(version: String): Version =
-        when (version) {
-          "HTTP/1.1" -> HTTP_1_1
-          else -> UNKNOWN
-        }
+      when (version) {
+        "HTTP/1.1" -> HTTP_1_1
+        else -> UNKNOWN
+      }
   }
 
   override fun toString(): String {

@@ -13,6 +13,4 @@ annotation class Type
   AnnotationTarget.VALUE_PARAMETER,
   AnnotationTarget.EXPRESSION,
 )
-annotation class Log(
-  val menu: String = "app",
-)
+annotation class Log(val menu: String = "app")

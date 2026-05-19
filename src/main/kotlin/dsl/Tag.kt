@@ -1,7 +1,5 @@
 package dsl
 
-import kotlin.text.appendLine
-
 open class Tag(val name: String) : Node {
   val children = ArrayList<Node>()
   val properties = HashMap<String, String>()
@@ -13,7 +11,7 @@ open class Tag(val name: String) : Node {
 
   // 添加子节点
   operator fun String.invoke(block: Tag.() -> Unit) {
-    children.add(Tag(this).apply(block)) 
+    children.add(Tag(this).apply(block))
   }
 
   // 添加一个文本子节点
@@ -26,21 +24,19 @@ open class Tag(val name: String) : Node {
       .append("<$name")
       .let { build ->
         if (this.properties.isNotEmpty()) {
-          this.properties.forEach {
-            build
-              .append(" ${it.key}='${it.value}'")
-          }
+          this.properties.forEach { build.append(" ${it.key}='${it.value}'") }
         }
         build
-      }.append(">")
+      }
+      .append(">")
       .let { build ->
         children.map(Node::render).map(build::append)
         build
-      }.append("</$name>")
+      }
+      .append("</$name>")
       .toString()
   }
 }
-
 
 class Text(val content: String) : Node {
   override fun render() = content

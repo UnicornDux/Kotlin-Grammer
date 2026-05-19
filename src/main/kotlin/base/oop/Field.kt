@@ -1,14 +1,11 @@
 package base.oop
 
 /**
- *  1. 属性的初始化尽量在构造方法中完成
- *  2. 无法在构造方法中初始化，尝试降级为局部变量
- *  3. 当需要使用到延迟初始化的时候
- *     var 修饰的变量可以使用 lateinit 修饰
- *     val 修饰的变量可以使用 by lazy 的方式
- *  4. 可空类型虽然可以使用 null 进行初始化，但是需要慎用
+ * 1. 属性的初始化尽量在构造方法中完成
+ * 2. 无法在构造方法中初始化，尝试降级为局部变量
+ * 3. 当需要使用到延迟初始化的时候 var 修饰的变量可以使用 lateinit 修饰 val 修饰的变量可以使用 by lazy 的方式
+ * 4. 可空类型虽然可以使用 null 进行初始化，但是需要慎用
  */
-
 fun classField() {
   // 延迟初始化
   val second = Second()
@@ -77,17 +74,14 @@ class Three {
 //
 // val / var 关键字修饰的变量都是类的属性
 //
-class Three2(
-  var b: Int = 1,
-)
+class Three2(var b: Int = 1)
 
 // 定义多个构造器，体现出来主构造与次构造函数之间的关系
-class Three3(
-  a: Int,
-) {
+class Three3(a: Int) {
   // 除了主构造函数，我们还可以构建多个次构造函数
   // 可以在次构造函数中处理逻辑，但是最终都会调用主构造函数。
   constructor(a: Int, b: Int) : this(a)
+
   constructor(a: Int, b: String) : this(a) {
     println("b:" + b)
   }

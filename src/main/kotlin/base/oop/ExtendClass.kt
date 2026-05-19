@@ -2,10 +2,7 @@ package base.oop
 
 // kotlin 中的类默认的修饰符是 final, 是不允许被继承的
 // 如果想要继承一个类，则这个类需要是 open 来修饰
-open class E(
-  name: String,
-  age: Int,
-) {
+open class E(name: String, age: Int) {
   constructor(name: String) : this(name, 11)
 }
 
@@ -20,6 +17,4 @@ class F : E {
 }
 
 // 直接在子类的主构造调用父类的构造
-class G(
-  name: String,
-) : E(name, age = 10)
+class G(name: String) : E(name, age = 10)

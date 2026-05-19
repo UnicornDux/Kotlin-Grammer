@@ -5,8 +5,8 @@ import java.io.FileReader
 import kotlin.io.readLine
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlinx.coroutines.async
+import kotlinx.coroutines.launch
 
 /**
  * @kotlin.internal.InlineOnly public inline func <T, R> with(receiver: T, block: T.() -> R): R =
@@ -21,12 +21,10 @@ fun useWith() {
     while (true) {
       line = readLine() ?: break
       print(line)
-      CoroutineScope(Dispatchers.Main)
-        .launch(Dispatchers.IO) {
-          val defer = async {
-          }
-          val result = defer.await()
-          println(result)
+      CoroutineScope(Dispatchers.Main).launch(Dispatchers.IO) {
+        val defer = async {}
+        val result = defer.await()
+        println(result)
       }
     }
     close()

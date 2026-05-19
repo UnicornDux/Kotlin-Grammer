@@ -2,12 +2,9 @@ package base.function
 
 /**
  * 说到表达式，就是可以赋值给一个变量的一个代码块，这个变量得到的值就是代码块运行的结果
- *
- * > 中缀表达式
- *  当一个表达式只有一个入参的时候，可以定义一种类似操作符的表达式，调用的时候可以不使用任何操作符
- *  只使用函数名称即可完成使用
- *  1. 定义中缀表达式的时候，需要在函数前添加 infix 关键字
- *  2. 例如
+ * > 中缀表达式 当一个表达式只有一个入参的时候，可以定义一种类似操作符的表达式，调用的时候可以不使用任何操作符 只使用函数名称即可完成使用
+ * 1. 定义中缀表达式的时候，需要在函数前添加 infix 关键字
+ * 2. 例如
  */
 infix fun <T> Array<T>.of(x: T): Int = this.indexOf(x)
 
@@ -25,7 +22,7 @@ fun run() {
     if (mode == "debug") {
       println("info")
       "info"
-    }else if(mode == "release") {
+    } else if (mode == "release") {
       println("error")
       "error"
     } else {
@@ -40,12 +37,14 @@ fun run() {
 fun whenCase(op: String) {
   var x: (left: Double, right: Double) -> Double =
     when (op) {
-      "+" -> { l, r -> l + r}
-      "-" -> { l, r -> l - r} 
-      "*" -> { l, r -> l * r}
-      "/" -> { l, r -> l / r}
-      "%" -> { l, r -> l % r}
-      else -> { throw UnsupportedOperationException("invalid operation") }
+      "+" -> { l, r -> l + r }
+      "-" -> { l, r -> l - r }
+      "*" -> { l, r -> l * r }
+      "/" -> { l, r -> l / r }
+      "%" -> { l, r -> l % r }
+      else -> {
+        throw UnsupportedOperationException("invalid operation")
+      }
     }
   println(x)
 }

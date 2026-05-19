@@ -1,12 +1,10 @@
 package func
 
 /**
- * let 函数的定义
- * @kotlin.internal.InlineOnly
- * public inline fun <T, R> T.let(block: (T) -> R): R = block(this)
+ * let 函数的定义 @kotlin.internal.InlineOnly public inline fun <T, R> T.let(block: (T) -> R): R =
+ * block(this)
  */
-
-data class Person (val name: String, val age: Int) {
+data class Person(val name: String, val age: Int) {
   fun work() {
     println("${this.name} is work hard, relax less")
   }

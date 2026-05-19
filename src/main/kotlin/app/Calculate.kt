@@ -28,23 +28,22 @@ fun calculate() {
   println("感谢您使用我们的计算程序!!")
 }
 
-class Operation(
-  op: String,
-) {
+class Operation(op: String) {
   var operationFunction: (left: Double, right: Double) -> Double
 
   init {
 
-    operationFunction = when (op) {
-      "+" -> { l, r -> l + r }
-      "-" -> { l, r -> l - r }
-      "*" -> { l, r -> l * r }
-      "/" -> { l, r -> l / r }
-      "%" -> { l, r -> l % r }
-      else -> {
-        throw UnsupportedOperationException(op)
+    operationFunction =
+      when (op) {
+        "+" -> { l, r -> l + r }
+        "-" -> { l, r -> l - r }
+        "*" -> { l, r -> l * r }
+        "/" -> { l, r -> l / r }
+        "%" -> { l, r -> l % r }
+        else -> {
+          throw UnsupportedOperationException(op)
+        }
       }
-    }
   }
 
   fun apply(left: Double, right: Double): Double = operationFunction(left, right)

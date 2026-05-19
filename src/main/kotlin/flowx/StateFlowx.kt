@@ -4,6 +4,4 @@ package flowx
 // 并且只广播最新的值给新的收集器
 //
 
-fun stateFlow() {
-
-}
+fun stateFlow() {}

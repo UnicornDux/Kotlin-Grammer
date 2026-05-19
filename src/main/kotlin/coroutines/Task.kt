@@ -37,46 +37,40 @@ class BaseContinuation : Continuation<Unit> {
 // 允许传入自定义 context 的 continuation, 从而我们可以在 Context 中做一些事情
 // 例如下面我们在自定义的 context 中对 continuation 进行了包装
 // 从而可以让 resumeWith 的协程结果运行在我们指定的 UI 线程中
-class ContextContinuation(
-        override val context: CoroutineContext,
-) : Continuation<Unit> {
+class ContextContinuation(override val context: CoroutineContext) : Continuation<Unit> {
   override fun resumeWith(result: Result<Unit>) {}
 }
 
 // 自定义context, 实现对 continuation 的包装, 让程序的 resumeWith 都运行在协程中
-class AsyncContext : AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
+class AsyncContext :
+  AbstractCoroutineContextElement(ContinuationInterceptor), ContinuationInterceptor {
   override fun <T> interceptContinuation(continuation: Continuation<T>): Continuation<T> =
-    UIContinuationWrapper(continuation.context.fold(continuation) { continuation, element ->
-      if (element != this && element is ContinuationInterceptor) {
-        element.interceptContinuation(continuation)
-      } else {
-        continuation
+    UIContinuationWrapper(
+      continuation.context.fold(continuation) { continuation, element ->
+        if (element != this && element is ContinuationInterceptor) {
+          element.interceptContinuation(continuation)
+        } else {
+          continuation
+        }
       }
-    })
+    )
 }
 
 // 为了在协程中不会使用到外界的数据
 
-class DownloadContext(
-  val url: String,
-) : AbstractCoroutineContextElement(Key) {
+class DownloadContext(val url: String) : AbstractCoroutineContextElement(Key) {
   companion object Key : CoroutineContext.Key<DownloadContext>
 }
 
 // 可以接受一个挂起函数作为参数
-fun useCorountine(
-  context: CoroutineContext = EmptyCoroutineContext,
-  block: suspend () -> Unit,
-) {
+fun useCorountine(context: CoroutineContext = EmptyCoroutineContext, block: suspend () -> Unit) {
   // block.startCoroutine(BaseContinuation())
   // 换成自定义 context 的协程.
   // context 和 context 之间可以组合起来使用, (不同用途的context)
   block.startCoroutine(ContextContinuation(context + AsyncContext()))
 }
 
-class UIContinuationWrapper<T>(
-  val continuation: Continuation<T>,
-) : Continuation<T> {
+class UIContinuationWrapper<T>(val continuation: Continuation<T>) : Continuation<T> {
   override val context = continuation.context
 
   override fun resumeWith(result: Result<T>) {
@@ -86,9 +80,7 @@ class UIContinuationWrapper<T>(
 
 private val pool by lazy { Executors.newCachedThreadPool() }
 
-class AsyncTask(
-  val block: () -> Unit,
-) {
+class AsyncTask(val block: () -> Unit) {
   fun execute() = pool.execute(block)
 }
 
@@ -102,17 +94,19 @@ suspend fun <T> costTimeOperation(block: CoroutineContext.() -> Result<T>) =
     // 这里将包装这个 continuation 的过程移动到自定义 context 中
     // val uiContinuation = UIContinuationWrapper(continuation)
     AsyncTask {
-      log("异步任务开始")
-      try {
-        continuation.resumeWith(block(continuation.context))
-      } catch (e: Exception) {
-        println("封装异常")
-        continuation.resumeWith(Result.failure(e))
+        log("异步任务开始")
+        try {
+          continuation.resumeWith(block(continuation.context))
+        } catch (e: Exception) {
+          println("封装异常")
+          continuation.resumeWith(Result.failure(e))
+        }
       }
-    }.execute()
+      .execute()
   }
 
 val LOGO_URL = "https://files.codelife.cc/wallhaven/full/28/wallhaven-283ry9.png"
+
 // val LOGO_URL = "https://files.codelife.cc/wallhaven/full/28/wallhaven-283r.png"
 
 fun show() {
@@ -153,11 +147,8 @@ object Http {
   val client = HttpClient.newHttpClient()
 
   fun loadImage(url: String): Result<ByteArray> {
-    var request = HttpRequest
-        .newBuilder()
-        .uri(URI.create(url))
-        .timeout(Duration.ofMinutes(1))
-        .build()
+    var request =
+      HttpRequest.newBuilder().uri(URI.create(url)).timeout(Duration.ofMinutes(1)).build()
     val response = Http.client.send(request, HttpResponse.BodyHandlers.ofByteArray())
     if (response.statusCode() == 200) {
       return Result.success(response.body())

@@ -1,3 +1,4 @@
+# .editorconfig
 root = true
 
 [*]
@@ -7,4 +8,12 @@ insert_final_newline = true
 [*.kt]
 indent_style = space
 indent_size = 2
+max_line_length = 120
 
+# ktlint 特定配置
+ktlint_code_style = ktlint_official          # 或 intellij_idea
+ktlint_standard_no-wildcard-imports = enabled
+ktlint_standard_no-unused-imports = enabled
+ktlint_standard_function-naming = disabled
+ktlint_standard_multiline-expression-wrapping = disabled
+ktlint_standard_string-template-indent = disabled

@@ -11,9 +11,7 @@ fun funcMap() {
   // flatmap (展开多重集合的方式)
   // public inline fun <T, R> Iterable<T>.flatMap(transform(T) -> Iterable<R>): List<R> {}
   //
-  listOf(1..10, 20..40, 60..80)
-    .flatMap{it}
-    .forEach(::println)
+  listOf(1..10, 20..40, 60..80).flatMap { it }.forEach(::println)
 
   listOf(1..10, 20..40, 60..80)
     .flatMap { iter ->
@@ -22,5 +20,6 @@ fun funcMap() {
         // 第二层展开的时候得到的就是每一个元素了
         ("NO: $it")
       }
-    }.forEach(::println)
+    }
+    .forEach(::println)
 }

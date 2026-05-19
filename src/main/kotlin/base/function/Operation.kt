@@ -19,13 +19,10 @@ fun operation() {
   add(*x)
 }
 
-class Complex(
-    val real: Double,
-    val imaginary: Double,
-) {
+class Complex(val real: Double, val imaginary: Double) {
   // 加法重载
   operator fun plus(other: Complex): Complex =
-      Complex(real + other.real, imaginary + other.imaginary)
+    Complex(real + other.real, imaginary + other.imaginary)
 
   operator fun plus(other: Int): Complex = Complex(real + other, imaginary)
 

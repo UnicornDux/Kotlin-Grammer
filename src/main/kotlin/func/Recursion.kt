@@ -5,15 +5,9 @@ package func
 // 在递归的时候没有进行其他的操作
 // 在一个非尾递归的程序中使用 tailrec 没有任何效果, 并且编译器会给你一个警告
 
-data class ListNode(
-  val value: Int,
-  var next: ListNode?,
-)
+data class ListNode(val value: Int, var next: ListNode?)
 
-tailrec fun findListNode(
-  head: ListNode?,
-  value: Int,
-): ListNode? {
+tailrec fun findListNode(head: ListNode?, value: Int): ListNode? {
   head ?: return null
   if (head.value == value) return head
   return findListNode(head.next, value)
@@ -36,10 +30,7 @@ data class TreeNode(val value: Int) {
 }
 
 // 递归时不是单独的操作，因此也不是尾递归
-fun findTreeNode(
-  root: TreeNode?,
-  value: Int,
-): TreeNode? {
+fun findTreeNode(root: TreeNode?, value: Int): TreeNode? {
   root ?: return null
   if (root.value == value) return root
   return findTreeNode(root.left, value) ?: return findTreeNode(root.right, value)

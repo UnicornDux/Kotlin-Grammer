@@ -5,23 +5,23 @@ import kotlin.reflect.KClass
 // kotlin 中的泛型
 fun runGeneric() {
   // 子类对象赋值给父类对象(协变)
-  var producer: Producer<Human> = object : Producer<Male> {
-    override fun generate(): Male {
-      return Male()
+  var producer: Producer<Human> =
+    object : Producer<Male> {
+      override fun generate(): Male {
+        return Male()
+      }
     }
-  }
 
   producer.generate()
 
   // 父类对象赋值给子类对象(逆变)
-  var consumer: Consumer<Female> = object : Consumer<Human> {
-    override fun accept(t: Human) {}
-  }
+  var consumer: Consumer<Female> =
+    object : Consumer<Human> {
+      override fun accept(t: Human) {}
+    }
   consumer.accept(Female())
 
-  val result = Pipe3().randomOrDefault<Ktor> {
-    Ktor("defaul")
-  }
+  val result = Pipe3().randomOrDefault<Ktor> { Ktor("defaul") }
   println(result)
 }
 
@@ -68,11 +68,7 @@ class Pipe2<out T>(_item: T) {
 //    > 使用 xxx is T 的方式来判断类型
 //    > reified 只能修饰 inline 函数
 class Pipe3 {
-  val data: List<Any> = listOf(
-    Koa("koa"),
-    Ktor("ktor"),
-    Netty("netty"),
-  )
+  val data: List<Any> = listOf(Koa("koa"), Ktor("ktor"), Netty("netty"))
 
   // 获取列表的类型，如果类型满足泛型类型就返回，否则执行 lambda 返回一个默认值
   inline fun <reified T> randomOrDefault(defaultAction: () -> T): T? {
@@ -81,17 +77,11 @@ class Pipe3 {
   }
 }
 
-data class Koa(
-  val name: String,
-)
+data class Koa(val name: String)
 
-data class Netty(
-  val name: String,
-)
+data class Netty(val name: String)
 
-data class Ktor(
-  val name: String,
-)
+data class Ktor(val name: String)
 
 inline fun <reified T : Any> getClass(): KClass<T> = T::class
 

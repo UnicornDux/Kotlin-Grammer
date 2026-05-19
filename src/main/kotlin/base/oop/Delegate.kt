@@ -4,10 +4,7 @@ import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
 class Delegrate {
-  /**
-   * 属性代理 :
-   *
-   */
+  /** 属性代理 : */
   val hello by lazy {
     // 懒加载, (只有第一次访问到这个 hello 的变量的时候才会被初始化)
     //
@@ -25,7 +22,8 @@ class SmartDevice {
   var work by RangerRegulator(initValue = 10, minValue = 0, maxValue = 100)
 }
 
-class RangerRegulator(initValue: Int, val minValue: Int, val maxValue: Int): ReadWriteProperty<Any, Int> {
+class RangerRegulator(initValue: Int, val minValue: Int, val maxValue: Int) :
+  ReadWriteProperty<Any, Int> {
   var value = initValue
 
   override fun getValue(thisRef: Any, property: KProperty<*>): Int {

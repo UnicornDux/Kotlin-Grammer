@@ -38,9 +38,8 @@ object Ollam : Tom() {
 }
 
 /**
- * seaded class 是一个有限子类的类，它的子类只能定义在同一个文件中
- *        (1.1 之前必须为内部类) 因此在 when case 的时候是可以穷尽的，
- *  > 主要的应用场景是封装一些硬件的操作指令，不能让外部随便的扩展
+ * seaded class 是一个有限子类的类，它的子类只能定义在同一个文件中 (1.1 之前必须为内部类) 因此在 when case 的时候是可以穷尽的，
+ * > > 主要的应用场景是封装一些硬件的操作指令，不能让外部随便的扩展
  */
 fun handler(t: Tom) {
   when (t) {
@@ -57,10 +56,7 @@ interface Pop {
 // seal class 的使用场景
 
 sealed class MainIntent {
-  data class Login(
-      val act: String,
-      val pwd: String,
-  ) : MainIntent()
+  data class Login(val act: String, val pwd: String) : MainIntent()
 
   object Logout : MainIntent()
 }
@@ -72,10 +68,7 @@ fun operation(mainIntent: MainIntent) {
   }
 }
 
-fun userLoginRequest(
-    act: String,
-    pwd: String,
-) {
+fun userLoginRequest(act: String, pwd: String) {
   println("$act is load in system with $pwd")
 }
 

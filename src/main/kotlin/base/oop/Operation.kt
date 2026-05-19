@@ -21,16 +21,18 @@ fun main() {
   println(comple4.imaginary)
 }
 
-class Comple(
-  val real: Double, val imaginary: Double
-) {
+class Comple(val real: Double, val imaginary: Double) {
   // 重写了 + 操作符
   operator fun plus(other: Comple): Comple = Comple(real + other.real, imaginary + other.imaginary)
 
   // 重写了 / 操作符号
   operator fun div(other: Comple): Comple {
-    val real = (real * other.real + imaginary * other.imaginary) / (other.real * other.real + other.imaginary * other.imaginary)
-    val imaginary = (imaginary * other.real - real * other.imaginary) / (other.real * other.real + other.imaginary * other.imaginary)
+    val real =
+      (real * other.real + imaginary * other.imaginary) /
+        (other.real * other.real + other.imaginary * other.imaginary)
+    val imaginary =
+      (imaginary * other.real - real * other.imaginary) /
+        (other.real * other.real + other.imaginary * other.imaginary)
     return Comple(real, imaginary)
   }
 }

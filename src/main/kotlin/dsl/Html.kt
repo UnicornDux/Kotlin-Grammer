@@ -11,22 +11,22 @@ fun dom() {
     .apply {
       properties["id"] = "HtmlId"
       children.add(Tag("head"))
-    }.render()
+    }
+    .render()
     .let(::println)
 }
 
 fun domdsl() {
   html {
-    "id"("htmlId")
-    "head" {
-      "id"("headId")
-    }
-    "body" {
-      "a" {
-        "href"("https://baidu.com")
-        +"百度一下"
+      "id"("htmlId")
+      "head" { "id"("headId") }
+      "body" {
+        "a" {
+          "href"("https://baidu.com")
+          +"百度一下"
+        }
       }
     }
-  }.render()
-  .let(::println)
+    .render()
+    .let(::println)
 }
